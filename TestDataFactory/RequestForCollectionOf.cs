@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using TestDataFactory.Randomization;
+using TestDataFactory.Randomization.Impl;
 
 namespace TestDataFactory
 {
@@ -42,7 +43,7 @@ namespace TestDataFactory
         /// <summary>
         /// Specifies values to fill given property with. 
         /// Each value will be used for corresponding object instance creation.
-        /// If values count is less than objects count, then they will be cycled.
+        /// If values count is less than objects count, then these values will be cycled.
         /// </summary>
         public RequestForCollectionOf<T> WithValues<TValue>(params TValue[] values)
         {
@@ -50,11 +51,20 @@ namespace TestDataFactory
             return this;
         }
 
+        /// <summary>
+        /// Specifies generator to obtain values which will be used to fill given property with.
+        /// </summary>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
+        /// <param name="generator">The generator (receives index starting from 0 as argument).</param>
         public RequestForCollectionOf<T> WithValues<TValue>(Func<int, TValue> generator)
         {
             return WithValues(Enumerable.Range(0, collectionSize).Select(generator).ToArray());
         }
 
+        /// <summary>
+        /// Fills specified property with values obtained from randomizer.
+        /// </summary>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
         public RequestForCollectionOf<T> UsingRandomizer<TValue>(TValue min, TValue max)
         {
             var type = typeof(T).GetProperty(properties.Last()).PropertyType;
@@ -64,6 +74,10 @@ namespace TestDataFactory
             return WithValues(Enumerable.Range(0, collectionSize).Select(x => randomizer.GetRandom()).ToArray());
         }
 
+        /// <summary>
+        /// Fills specified property with values obtained from randomizer.
+        /// </summary>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
         public RequestForCollectionOf<T> UsingRandomizer<TValue>()
         {
             var type = typeof (T).GetProperty(properties.Last()).PropertyType;

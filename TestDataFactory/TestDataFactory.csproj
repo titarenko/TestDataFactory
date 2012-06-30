@@ -87,18 +87,18 @@
     <Compile Include="TestDataFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Randomization\EnglishAdjectives.txt">
+    <EmbeddedResource Include="Randomization\EnglishAdjectives.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Randomization\EnglishNames.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Randomization\EnglishNames.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Randomization\EnglishNouns.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Randomization\EnglishNouns.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Randomization\EnglishSurnames.txt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Randomization\EnglishSurnames.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

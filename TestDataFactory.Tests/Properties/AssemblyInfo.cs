@@ -1,6 +1,4 @@
 ﻿using System.Reflection;
 
 [assembly: AssemblyTitle("TestDataFactory.Tests")]
-
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyCopyright("Copyright (c) Constantin Titarenko, 2012")]

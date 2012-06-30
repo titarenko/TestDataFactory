@@ -1,32 +1,47 @@
 using TestDataFactory.Randomization;
+using TestDataFactory.Randomization.Impl;
 
 namespace TestDataFactory
 {
     /// <summary>
-    /// Allows easily create test data.
+    /// Allows easy creation of large amounts of test data.
     /// </summary>
     public class TestDataFactory
     {
-        private readonly WordRandomizer nounRandomizer = new WordRandomizer("Randomization/EnglishNouns.txt");
-        private readonly WordRandomizer adjectiveRandomizer = new WordRandomizer("Randomization/EnglishAdjectives.txt");
-        private readonly WordRandomizer nameRandomizer = new WordRandomizer("Randomization/EnglishNames.txt");
-        private readonly WordRandomizer surnameRandomizer = new WordRandomizer("Randomization/EnglishSurnames.txt");
+        private const string @namespace = "TestDataFactory.Randomization.Impl.";
 
+        private readonly WordRandomizer nounRandomizer = new WordRandomizer(@namespace + "EnglishNouns.txt");
+        private readonly WordRandomizer adjectiveRandomizer = new WordRandomizer(@namespace + "EnglishAdjectives.txt");
+        private readonly WordRandomizer nameRandomizer = new WordRandomizer(@namespace + "EnglishNames.txt");
+        private readonly WordRandomizer surnameRandomizer = new WordRandomizer(@namespace + "EnglishSurnames.txt");
+
+        /// <summary>
+        /// Returns randomizer which returns English nouns.
+        /// </summary>
         public IGenericRandomizer<string> Noun
         {
             get { return nounRandomizer; }
         }
 
+        /// <summary>
+        /// Returns randomizer which returns English adjectives.
+        /// </summary>
         public IGenericRandomizer<string> Adjective
         {
             get { return adjectiveRandomizer; }
         }
 
+        /// <summary>
+        /// Returns randomizer which returns English names (first names).
+        /// </summary>
         public IGenericRandomizer<string> Name
         {
             get { return nameRandomizer; }
         }
 
+        /// <summary>
+        /// Returns randomizer which returns English surnames (last names).
+        /// </summary>
         public IGenericRandomizer<string> Surname
         {
             get { return surnameRandomizer; }
