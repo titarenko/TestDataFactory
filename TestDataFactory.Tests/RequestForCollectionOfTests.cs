@@ -4,7 +4,6 @@ using System.Linq;
 
 namespace TestDataFactory.Tests
 {
-    // TODO: create tests, not usage example
     [TestFixture]
     public class RequestForCollectionOfTests
     {
@@ -14,7 +13,8 @@ namespace TestDataFactory.Tests
 
             public DateTime CreationDate { get; set; }
         }
-        
+
+        // TODO: write tests, not usage example
         [Test]
         public void ApiUsageExample()
         {
@@ -27,10 +27,10 @@ namespace TestDataFactory.Tests
 
             Assert.AreEqual(100, collection.Count);
 
-            Assert.IsNotNullOrEmpty(collection[0].Name);
+            Assert.IsNotNullOrEmpty(collection[0].Name); // please, pay attention to indexes - values were cycled
             Assert.IsNotNullOrEmpty(collection[2].Name);
 
-            Assert.AreEqual(new DateTime(2000, 1, 2), collection[0].CreationDate);
+            Assert.AreEqual(new DateTime(2000, 1, 2), collection[0].CreationDate); // please, pay attention to indexes - values were cycled
             Assert.AreEqual(new DateTime(2000, 1, 2), collection[2].CreationDate);
         }
     }
