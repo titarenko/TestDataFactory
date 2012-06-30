@@ -16,7 +16,7 @@ namespace TestDataFactory
         private readonly WordRandomizer surnameRandomizer = new WordRandomizer(@namespace + "EnglishSurnames.txt");
 
         /// <summary>
-        /// Returns randomizer which returns English nouns.
+        /// Obtains randomizer which returns English nouns.
         /// </summary>
         public IGenericRandomizer<string> Noun
         {
@@ -24,7 +24,7 @@ namespace TestDataFactory
         }
 
         /// <summary>
-        /// Returns randomizer which returns English adjectives.
+        /// Obtains randomizer which returns English adjectives.
         /// </summary>
         public IGenericRandomizer<string> Adjective
         {
@@ -32,7 +32,7 @@ namespace TestDataFactory
         }
 
         /// <summary>
-        /// Returns randomizer which returns English names (first names).
+        /// Obtains randomizer which returns English names (first names).
         /// </summary>
         public IGenericRandomizer<string> Name
         {
@@ -40,7 +40,7 @@ namespace TestDataFactory
         }
 
         /// <summary>
-        /// Returns randomizer which returns English surnames (last names).
+        /// Obtains randomizer which returns English surnames (last names).
         /// </summary>
         public IGenericRandomizer<string> Surname
         {
