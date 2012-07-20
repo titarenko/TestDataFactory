@@ -6,7 +6,7 @@ namespace TestDataFactory
     /// <summary>
     /// Allows easy creation of large amounts of test data.
     /// </summary>
-    public class TestDataFactory
+    public class Factory : IFactory
     {
         private const string @namespace = "TestDataFactory.Randomization.Impl.";
 

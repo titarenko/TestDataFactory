@@ -18,7 +18,7 @@ namespace TestDataFactory.Tests
         [Test]
         public void ApiUsageExample()
         {
-            var factory = new TestDataFactory();
+            var factory = new Factory();
 
             var collection = factory.CreateMany<Entity>(100)
                 .FillProperty(x => x.Name).WithValues(x => factory.Noun.GetRandom())

@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
+    <Compile Include="IFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Randomization\IGenericRandomizer.cs" />
     <Compile Include="Randomization\Impl\DateTimeRandomizer.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Randomization\IRandomizer.cs" />
     <Compile Include="Randomization\Randomizer.cs" />
     <Compile Include="RequestForCollectionOf.cs" />
-    <Compile Include="TestDataFactory.cs" />
+    <Compile Include="Factory.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Randomization\Impl\EnglishAdjectives.txt">
